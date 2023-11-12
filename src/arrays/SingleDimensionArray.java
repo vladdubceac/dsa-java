@@ -26,4 +26,16 @@ public class SingleDimensionArray {
             System.out.println("Invalid index to access array ! ");
         }
     }
+
+    // Array Traversal
+
+    public void traversalArray() {
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+        }catch (Exception e){
+            System.out.println("Array no longer exists!");
+        }
+    }
 }
