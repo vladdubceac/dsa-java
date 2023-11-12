@@ -34,8 +34,19 @@ public class SingleDimensionArray {
             for (int i = 0; i < arr.length; i++) {
                 System.out.print(arr[i] + " ");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Array no longer exists!");
         }
+    }
+
+    // Search for an element in the given Array
+    public void searchInArray(int valueToSearch) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == valueToSearch) {
+                System.out.println("Value is found at the index of " + i);
+                return;
+            }
+        }
+        System.out.println(valueToSearch + " is not found !");
     }
 }

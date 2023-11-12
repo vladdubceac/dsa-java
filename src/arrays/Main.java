@@ -11,8 +11,8 @@ public class Main {
         intArray[2] = 3;
         System.out.println(Arrays.toString(intArray));
         System.out.println("----------");
-        // All together
 
+        // All together
         String sArray[] = {"a", "b", "c"};
         System.out.println(Arrays.toString(sArray));
         System.out.println("----------");
@@ -34,5 +34,11 @@ public class Main {
         System.out.println("----------");
 
         sda.traversalArray();
+        System.out.println("----------");
+
+        System.out.println("----------");
+        sda.searchInArray(20);
+        sda.searchInArray(10);
+
     }
 }
