@@ -40,5 +40,8 @@ public class Main {
         sda.searchInArray(20);
         sda.searchInArray(10);
 
+        sda.deleteValue(0);
+        System.out.println(sda.arr[0]);
+
     }
 }
