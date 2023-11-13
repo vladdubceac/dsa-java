@@ -1,4 +1,4 @@
-package arrays;
+package arrays.one_dimensional;
 
 import java.util.Arrays;
 
