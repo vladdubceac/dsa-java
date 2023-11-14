@@ -1,5 +1,7 @@
 package arrays.two_dimensional;
 
+import java.util.Arrays;
+
 public class TwoDimensionalArray {
     int arr[][] = null;
 
@@ -34,6 +36,16 @@ public class TwoDimensionalArray {
             System.out.println("Cell value is: " + arr[row][col]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid index for 2D array");
+        }
+    }
+
+    // Traverse 2D array
+    public void traverse2DArray(){
+        for(int row = 0; row < arr.length; row++){
+            for(int col = 0; col < arr[0].length; col++){
+                System.out.print(arr[row][col] + " ");
+            }
+            System.out.println();
         }
     }
 }
