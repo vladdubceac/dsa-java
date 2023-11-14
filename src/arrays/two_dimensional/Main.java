@@ -28,9 +28,11 @@ public class Main {
         sda.insertValueInTheArray(2, 0, 40);
 //        sda.accessCell(0,1);
 //        sda.traverse2DArray();
-        sda.searchingValue(20);
-        sda.searchingValue(50);
+//        sda.searchingValue(20);
+//        sda.searchingValue(50);
 
-//        System.out.println(Arrays.deepToString(sda.arr));
+        System.out.println(Arrays.deepToString(sda.arr));
+        sda.deleteValue(0,0);
+        System.out.println(Arrays.deepToString(sda.arr));
     }
 }
