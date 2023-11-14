@@ -20,5 +20,10 @@ public class Main {
         String s2DArray[][] = {{"a","b"},{"c","d"}};
 
         System.out.println(Arrays.deepToString(s2DArray));
+
+        TwoDimensionalArray sda = new TwoDimensionalArray(3,3);
+        sda.insertValueInTheArray(0,0,10);
+        sda.insertValueInTheArray(0,0,20);
+        System.out.println(Arrays.deepToString(sda.arr));
     }
 }
