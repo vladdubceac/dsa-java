@@ -40,12 +40,25 @@ public class TwoDimensionalArray {
     }
 
     // Traverse 2D array
-    public void traverse2DArray(){
-        for(int row = 0; row < arr.length; row++){
-            for(int col = 0; col < arr[0].length; col++){
+    public void traverse2DArray() {
+        for (int row = 0; row < arr.length; row++) {
+            for (int col = 0; col < arr[0].length; col++) {
                 System.out.print(arr[row][col] + " ");
             }
             System.out.println();
         }
+    }
+
+    // Searching a single value from the Array
+    public void searchingValue(int value) {
+        for (int row = 0; row < arr.length; row++) {
+            for (int col = 0; col < arr[0].length; col++) {
+                if (arr[row][col] == value) {
+                    System.out.println("Value " + value + " is found at row: " + row + ", ool: " + col);
+                    return;
+                }
+            }
+        }
+        System.out.println("Value " + value + " is not found");
     }
 }
