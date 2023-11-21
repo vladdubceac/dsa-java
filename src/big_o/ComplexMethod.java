@@ -10,7 +10,7 @@ public class ComplexMethod {
     private static void printUnorderedPairs(int[] arrayA, int[] arrayB) {
         for (int i = 0; i < arrayA.length; i++) {
             for (int j = 0; j < arrayB.length; j++) {
-                for (int k = 0; k < 100_000; k++) {
+                for (int k = 0; k < 1_000_000; k++) {
                     System.out.println(k+1+". "+arrayA[i]+","+arrayB[j]);
                 }
             }
