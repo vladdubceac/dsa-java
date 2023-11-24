@@ -5,7 +5,7 @@ public class SinglyLinkedList {
     private Node tail;
     private int size;
 
-    public Node createSinglyLinkedList(int nodeValue){
+    public Node createSinglyLinkedList(int nodeValue) {
         head = new Node();
         Node node = new Node();
         node.setNext(null);
@@ -14,6 +14,34 @@ public class SinglyLinkedList {
         tail = node;
         size = 1;
         return head;
+    }
+
+    // Insert Method SinglyLinkedList
+    public void insertInLinkedList(int nodeValue, int location) {
+        Node node = new Node();
+        node.setValue(nodeValue);
+        if (head == null) {
+            createSinglyLinkedList(nodeValue);
+            return;
+        }else if(location==0){
+            node.setNext(head);
+            head = node;
+        }else if(location>=size){
+            node.setNext(null);
+            tail.setNext(node);
+            tail = node;
+        }else{
+            Node tempNode = head;
+            int index = 0;
+            while(index <location-1){
+                tempNode = tempNode.getNext();
+                index++;
+            }
+            Node nextNode = tempNode.getNext();
+            tempNode.setNext(node);
+            node.setNext(nextNode);
+        }
+        size++;
     }
 
     public Node getHead() {
