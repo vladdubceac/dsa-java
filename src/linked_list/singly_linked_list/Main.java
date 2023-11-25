@@ -11,5 +11,7 @@ public class Main {
         sll.insertInLinkedList(9,0);
         sll.traversalSinglyLinkedList();
 //        System.out.println(sll.getHead().getNext().getNext().getValue());
+        sll.searchNode(7);
+        sll.searchNode(10);
     }
 }

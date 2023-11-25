@@ -23,17 +23,17 @@ public class SinglyLinkedList {
         if (head == null) {
             createSinglyLinkedList(nodeValue);
             return;
-        }else if(location==0){
+        } else if (location == 0) {
             node.setNext(head);
             head = node;
-        }else if(location>=size){
+        } else if (location >= size) {
             node.setNext(null);
             tail.setNext(node);
             tail = node;
-        }else{
+        } else {
             Node tempNode = head;
             int index = 0;
-            while(index <location-1){
+            while (index < location - 1) {
                 tempNode = tempNode.getNext();
                 index++;
             }
@@ -45,20 +45,36 @@ public class SinglyLinkedList {
     }
 
     // SinglyLinkedList Traversal
-    public void traversalSinglyLinkedList(){
-        if(head==null){
+    public void traversalSinglyLinkedList() {
+        if (head == null) {
             System.out.println("SLL does not exist!");
-        }else{
+        } else {
             Node tempNode = head;
-            for(int i=0;i<size;i++){
+            for (int i = 0; i < size; i++) {
                 System.out.print(tempNode.getValue());
-                if(i!=size-1){
+                if (i != size - 1) {
                     System.out.print(" -> ");
                 }
                 tempNode = tempNode.getNext();
             }
         }
         System.out.println("\n");
+    }
+
+    // Search for a node
+    boolean searchNode(int nodeValue) {
+        if (head != null) {
+            Node tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.getValue() == nodeValue) {
+                    System.out.print("Found the node " + nodeValue + " at location " + i + "\n");
+                    return true;
+                }
+                tempNode = tempNode.getNext();
+            }
+        }
+        System.out.println("Node " + nodeValue + " not found!");
+        return false;
     }
 
     public Node getHead() {
