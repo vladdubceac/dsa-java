@@ -13,6 +13,5 @@ public class Main {
 //        System.out.println(sll.getHead().getNext().getNext().getValue());
         sll.searchNode(7);
         sll.searchNode(10);
-        
     }
 }
