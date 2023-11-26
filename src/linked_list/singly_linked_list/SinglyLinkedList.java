@@ -111,6 +111,13 @@ public class SinglyLinkedList {
         }
     }
 
+    // Delete entire list
+    public void deleteSLL(){
+        head=null;
+        tail=null;
+        System.out.println("The SLL deleted successfully");
+    }
+
     public Node getHead() {
         return head;
     }

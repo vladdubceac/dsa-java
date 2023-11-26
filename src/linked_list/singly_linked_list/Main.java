@@ -22,7 +22,14 @@ public class Main {
         sll.traversalSinglyLinkedList();
         sll.deletionOfNode(0);
         sll.traversalSinglyLinkedList();
-        sll.deletionOfNode(0);
+        sll.insertInLinkedList(1,0);
+        sll.insertInLinkedList(5,1);
+        sll.insertInLinkedList(2,2);
+        sll.insertInLinkedList(3,3);
+        sll.insertInLinkedList(4,4);
         sll.traversalSinglyLinkedList();
+        sll.deleteSLL();
+        sll.traversalSinglyLinkedList();
+
     }
 }
