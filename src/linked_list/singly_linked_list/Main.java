@@ -13,5 +13,16 @@ public class Main {
 //        System.out.println(sll.getHead().getNext().getNext().getValue());
         sll.searchNode(7);
         sll.searchNode(10);
+
+        sll.deletionOfNode(3);
+        sll.traversalSinglyLinkedList();
+        sll.deletionOfNode(0);
+        sll.traversalSinglyLinkedList();
+        sll.deletionOfNode(sll.getSize());
+        sll.traversalSinglyLinkedList();
+        sll.deletionOfNode(0);
+        sll.traversalSinglyLinkedList();
+        sll.deletionOfNode(0);
+        sll.traversalSinglyLinkedList();
     }
 }

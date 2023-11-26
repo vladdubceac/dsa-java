@@ -77,6 +77,40 @@ public class SinglyLinkedList {
         return false;
     }
 
+    // Deleting a node from SinglyLinkedList
+    public void deletionOfNode(int location){
+        if(head == null){
+            System.out.println("The SLL does not exist");
+            return;
+        }else if(location==0){
+            head = head.getNext();
+            size--;
+            if(size == 0) {
+                tail = null;
+            }
+        }else if(location>=size){
+            Node tempNode = head;
+            for(int i = 0; i<size-1; i++){
+                tempNode = tempNode.getNext();
+            }
+            if(tempNode == head){
+                tail = head = null;
+                size--;
+                return;
+            }
+            tempNode.setNext(null);
+            tail = tempNode;
+            size--;
+        }else{
+            Node tempNode =head;
+            for(int i=0;i<location-1;i++){
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(tempNode.getNext().getNext());
+            size--;
+        }
+    }
+
     public Node getHead() {
         return head;
     }
