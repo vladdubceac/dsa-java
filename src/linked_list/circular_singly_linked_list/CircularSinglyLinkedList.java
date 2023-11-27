@@ -16,6 +16,34 @@ public class CircularSinglyLinkedList {
         return head;
     }
 
+    // insert
+    public void insertCSLL(int nodeValue, int location){
+        Node node = new Node();
+        node.setValue(nodeValue);
+        if(head==null){
+            createCSLL(nodeValue);
+            return;
+        }else if(location==0){
+            node.setNext(head);
+            head = node;
+            tail.setNext(head);
+        }else if(location>=size){
+            tail.setNext(node);
+            tail = node;
+            tail.setNext(head);
+        }else{
+            Node tempNode = head;
+            int index = 0;
+            while(index < location-1){
+                tempNode = tempNode.getNext();
+                index++;
+            }
+            node.setNext(tempNode.getNext());
+            tempNode.setNext(node);
+        }
+        size++;
+    }
+
     public Node getHead() {
         return head;
     }
