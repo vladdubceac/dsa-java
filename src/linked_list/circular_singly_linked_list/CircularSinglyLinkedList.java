@@ -5,7 +5,7 @@ public class CircularSinglyLinkedList {
     private Node tail;
     private int size;
 
-    public Node createCSLL(int nodeValue){
+    public Node createCSLL(int nodeValue) {
         head = new Node();
         Node node = new Node();
         node.setValue(nodeValue);
@@ -17,24 +17,24 @@ public class CircularSinglyLinkedList {
     }
 
     // insert
-    public void insertCSLL(int nodeValue, int location){
+    public void insertCSLL(int nodeValue, int location) {
         Node node = new Node();
         node.setValue(nodeValue);
-        if(head==null){
+        if (head == null) {
             createCSLL(nodeValue);
             return;
-        }else if(location==0){
+        } else if (location == 0) {
             node.setNext(head);
             head = node;
             tail.setNext(head);
-        }else if(location>=size){
+        } else if (location >= size) {
             tail.setNext(node);
             tail = node;
             tail.setNext(head);
-        }else{
+        } else {
             Node tempNode = head;
             int index = 0;
-            while(index < location-1){
+            while (index < location - 1) {
                 tempNode = tempNode.getNext();
                 index++;
             }
@@ -42,6 +42,26 @@ public class CircularSinglyLinkedList {
             tempNode.setNext(node);
         }
         size++;
+    }
+
+    // Traversal method
+    public void traversalCSLL() {
+        if (head == null) {
+            System.out.println("CSSL doesn't exist ! ");
+            return;
+        } else {
+            Node temp = head;
+            int index = 0;
+            while (index < size) {
+                System.out.print(temp.getValue());
+                if (index != size - 1) {
+                    System.out.print(" -> ");
+                }
+                temp = temp.getNext();
+                index++;
+            }
+        }
+        System.out.println();
     }
 
     public Node getHead() {
