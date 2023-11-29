@@ -19,5 +19,8 @@ public class Main {
 //        csll.deleteNode(8);
         csll.deleteNode(2);
         csll.traversalCSLL();
+
+        csll.deleteCSLL();
+        csll.traversalCSLL();
     }
 }
