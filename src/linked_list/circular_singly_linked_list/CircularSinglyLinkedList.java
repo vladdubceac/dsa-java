@@ -64,6 +64,22 @@ public class CircularSinglyLinkedList {
         System.out.println();
     }
 
+    // Search method
+    public boolean searchNode(int nodeValue) {
+        if (head != null) {
+            Node tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.getValue() == nodeValue) {
+                    System.out.println("Found node " + nodeValue + " at location : " + i);
+                    return true;
+                }
+                tempNode = tempNode.getNext();
+            }
+        }
+        System.out.println("Node " + nodeValue + " not found !");
+        return false;
+    }
+
     public Node getHead() {
         return head;
     }
