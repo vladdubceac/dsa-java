@@ -12,7 +12,12 @@ public class Main {
 //        System.out.println(csll.getTail().getValue());
 //        System.out.println(csll.getSize());
         csll.traversalCSLL();
-        csll.searchNode(5);
-        csll.searchNode(10);
+//        csll.searchNode(5);
+//        csll.searchNode(10);
+
+//        csll.deleteNode(0);
+//        csll.deleteNode(8);
+        csll.deleteNode(2);
+        csll.traversalCSLL();
     }
 }

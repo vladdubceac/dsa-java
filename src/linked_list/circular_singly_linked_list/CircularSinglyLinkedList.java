@@ -80,6 +80,44 @@ public class CircularSinglyLinkedList {
         return false;
     }
 
+    // Delete Method
+    public void deleteNode(int location) {
+        if (head == null) {
+            System.out.println("The CSLL does not exist! ");
+            return;
+        } else if (location == 0) {
+            head = head.getNext();
+            tail.setNext(head);
+            size--;
+            if (size == 0) {
+                tail = null;
+                head.setNext(null);
+                head = null;
+            }
+        } else if (location >= size) {
+            Node tempNode = head;
+            for (int i = 0; i < size - 1; i++) {
+                tempNode = tempNode.getNext();
+            }
+            if (tempNode == head) {
+                head.setNext(null);
+                tail = head = null;
+                size--;
+                return;
+            }
+            tempNode.setNext(head);
+            tail = tempNode;
+            size--;
+        } else {
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(tempNode.getNext().getNext());
+            size--;
+        }
+    }
+
     public Node getHead() {
         return head;
     }
