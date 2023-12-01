@@ -5,7 +5,7 @@ public class DoublyLinkedList {
     private DoublyNode tail;
     private int size;
 
-    public DoublyNode createDLL(int nodeValue){
+    public DoublyNode createDLL(int nodeValue) {
         DoublyNode newNode = new DoublyNode();
         newNode.setValue(nodeValue);
         newNode.setNext(null);
@@ -14,6 +14,39 @@ public class DoublyLinkedList {
         tail = newNode;
         size = 1;
         return head;
+    }
+
+    // Insertion Method
+    public void insertDLL(int nodeValue, int location) {
+        DoublyNode newNode = new DoublyNode();
+        newNode.setValue(nodeValue);
+        if (head == null) {
+            createDLL(nodeValue);
+            return;
+        } else if (location == 0) {
+            newNode.setPrev(null);
+            newNode.setNext(head);
+            head.setPrev(newNode);
+            head = newNode;
+        } else if (location >= size) {
+            newNode.setNext(null);
+            tail.setNext(newNode);
+            newNode.setPrev(tail);
+            tail = newNode;
+        } else {
+            DoublyNode tempNode = head;
+            int index = 0;
+            while (index < location - 1) {
+                tempNode = tempNode.getNext();
+                index++;
+            }
+            newNode.setPrev(tempNode);
+            newNode.setNext(tempNode.getNext());
+            tempNode.setNext(newNode);
+            newNode.getNext().setPrev(newNode);
+        }
+        size++;
+
     }
 
     public DoublyNode getHead() {
