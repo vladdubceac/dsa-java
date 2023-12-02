@@ -97,12 +97,50 @@ public class DoublyLinkedList {
                 }
                 tempNode = tempNode.getNext();
             }
-        }else{
+        } else {
             System.out.println("DLL does not exist !");
             return false;
         }
-        System.out.println("Node "+nodeValue+" not found in the list !");
+        System.out.println("Node " + nodeValue + " not found in the list !");
         return false;
+    }
+
+    // Deletion Method
+    public void deleteNodeDLL(int location) {
+        if (head == null) {
+            System.out.println("The DLL does not exist !");
+        } else if (location == 0) {
+            if (size == 1) {
+                head = null;
+                tail = null;
+                size--;
+                return;
+            } else {
+                head = head.getNext();
+                head.setPrev(null);
+                size--;
+            }
+        } else if (location >= size) {
+            DoublyNode tempNode = tail.getPrev();
+            if (size == 1) {
+                head = null;
+                tail = null;
+                size--;
+                return;
+            } else {
+                tempNode.setNext(null);
+                tail = tempNode;
+                size--;
+            }
+        } else {
+            DoublyNode tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(tempNode.getNext().getNext());
+            tempNode.getNext().setPrev(tempNode);
+            size--;
+        }
     }
 
     public DoublyNode getHead() {

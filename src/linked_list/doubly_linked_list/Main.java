@@ -13,7 +13,13 @@ public class Main {
         System.out.println(dll.getHead().getNext().getValue());
         dll.traverseDLL();
 //        dll.reverseTraverseDLL();
-        dll.searchNode(5);
-        dll.searchNode(8);
+//        dll.searchNode(5);
+//        dll.searchNode(8);
+        dll.deleteNodeDLL(0);
+        dll.traverseDLL();
+        dll.deleteNodeDLL(3);
+        dll.traverseDLL();
+        dll.deleteNodeDLL(9);
+        dll.traverseDLL();
     }
 }
