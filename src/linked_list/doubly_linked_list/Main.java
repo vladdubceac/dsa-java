@@ -12,6 +12,8 @@ public class Main {
         System.out.println(dll.getHead().getValue());
         System.out.println(dll.getHead().getNext().getValue());
         dll.traverseDLL();
-        dll.reverseTraverseDLL();
+//        dll.reverseTraverseDLL();
+        dll.searchNode(5);
+        dll.searchNode(8);
     }
 }

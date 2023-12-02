@@ -68,21 +68,41 @@ public class DoublyLinkedList {
     }
 
     // Reverse traversal method
-    public void reverseTraverseDLL(){
-        if(head==null){
+    public void reverseTraverseDLL() {
+        if (head == null) {
             System.out.println("DLL does not exist !");
-        }else{
+        } else {
             DoublyNode tempNode = tail;
 //            while (tempNode!=null){
-            for(int i=0;i<size;i++){
+            for (int i = 0; i < size; i++) {
                 System.out.print(tempNode.getValue());
 //                if(tempNode!=head){
-                if(i!=size-1){
+                if (i != size - 1) {
                     System.out.print(" <- ");
                 }
                 tempNode = tempNode.getPrev();
             }
         }
+        System.out.println("\n");
+    }
+
+    // Search node
+    public boolean searchNode(int nodeValue) {
+        if (head != null) {
+            DoublyNode tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.getValue() == nodeValue) {
+                    System.out.println("Node " + nodeValue + " found at position " + i);
+                    return true;
+                }
+                tempNode = tempNode.getNext();
+            }
+        }else{
+            System.out.println("DLL does not exist !");
+            return false;
+        }
+        System.out.println("Node "+nodeValue+" not found in the list !");
+        return false;
     }
 
     public DoublyNode getHead() {
