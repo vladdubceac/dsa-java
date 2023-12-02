@@ -21,5 +21,7 @@ public class Main {
         dll.traverseDLL();
         dll.deleteNodeDLL(9);
         dll.traverseDLL();
+        dll.deleteDLL();
+        dll.traverseDLL();
     }
 }
