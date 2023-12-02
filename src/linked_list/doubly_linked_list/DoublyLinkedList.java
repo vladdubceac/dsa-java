@@ -46,7 +46,25 @@ public class DoublyLinkedList {
             newNode.getNext().setPrev(newNode);
         }
         size++;
+    }
 
+    // Traversal method
+    public void traverseDLL() {
+        if (head != null) {
+            DoublyNode tempNode = head;
+            for (int i = 0; i < size; i++) {
+//            while (tempNode != null) {
+                System.out.print(tempNode.getValue());
+                if (i < size - 1) {
+//                if (tempNode != tail) {
+                    System.out.print(" -> ");
+                }
+                tempNode = tempNode.getNext();
+            }
+        } else {
+            System.out.println("DLL does not exist!");
+        }
+        System.out.println("\n");
     }
 
     public DoublyNode getHead() {
