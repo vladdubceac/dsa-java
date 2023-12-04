@@ -141,6 +141,24 @@ public class CircularDoublyLinkedList {
         }
     }
 
+    // Deletion method
+    public void deleteCDLL(){
+        if(head==null){
+            System.out.println("The CDLL does not exist ! ");
+        }else{
+            DoublyNode node = head;
+            int index = 0;
+            while(index <size){
+                node.setPrev(null);
+                node = node.getNext();
+                index++;
+            }
+            head =  null;
+            tail = null;
+            System.out.println("The CDLL has been deleted ! ");
+        }
+    }
+
     public DoublyNode getHead() {
         return head;
     }

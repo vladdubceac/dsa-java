@@ -7,6 +7,9 @@ public class Main {
         cdll.insertNode(2,0);
         cdll.insertNode(3,2);
         cdll.insertNode(4,5);
+        cdll.insertNode(5,3);
+        cdll.insertNode(0,4);
+        cdll.insertNode(-1,6);
 //        System.out.println(cdll.getHead().getValue());
 //        System.out.println(cdll.getHead().getNext().getValue());
 //        cdll.reverseTraversalCDLL();
@@ -18,6 +21,8 @@ public class Main {
         cdll.deleteNode(6);
         cdll.traverseCDLL();
         cdll.deleteNode(2);
+        cdll.traverseCDLL();
+        cdll.deleteCDLL();
         cdll.traverseCDLL();
     }
 }
