@@ -67,36 +67,78 @@ public class CircularDoublyLinkedList {
     }
 
     // Reverse traversal
-    public void reverseTraversalCDLL(){
-        if(head!=null){
+    public void reverseTraversalCDLL() {
+        if (head != null) {
             DoublyNode tempNode = tail;
-            for(int i=0;i<size;i++){
+            for (int i = 0; i < size; i++) {
                 System.out.print(tempNode.getValue());
-                if(i!=size-1){
+                if (i != size - 1) {
                     System.out.print(" <- ");
                 }
                 tempNode = tempNode.getPrev();
             }
-        }else{
+        } else {
             System.out.println("The CDLL does not exist! ");
         }
         System.out.println();
     }
 
     // Search for a Node
-    boolean searchNode(int nodeValue){
-        if(head!=null){
+    boolean searchNode(int nodeValue) {
+        if (head != null) {
             DoublyNode tempNode = head;
-            for(int i=0;i<size;i++){
-                if(tempNode.getValue()==nodeValue){
-                    System.out.println("The node "+nodeValue+" is found at location: "+i);
-                    return  true;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.getValue() == nodeValue) {
+                    System.out.println("The node " + nodeValue + " is found at location: " + i);
+                    return true;
                 }
                 tempNode = tempNode.getNext();
             }
         }
         System.out.println("Node not found ! ");
         return false;
+    }
+
+    // Deletion Method
+    public void deleteNode(int location) {
+        if (head == null) {
+            System.out.println("The CDLL does not exist ! ");
+            return;
+        } else if (location == 0) {
+            if (size == 1) {
+                head.setPrev(null);
+                head.setNext(null);
+                head = tail = null;
+                size--;
+                return;
+            }else{
+                head = head.getNext();
+                head.setPrev(tail);
+                tail.setNext(head);
+                size--;
+            }
+        }else if(location>=size){
+            if(size==1){
+                head.setPrev(null);
+                head.setNext(null);
+                head = tail = null;
+                size--;
+                return;
+            }else{
+                tail = tail.getPrev();
+                tail.setNext(head);
+                head.setPrev(tail);
+                size--;
+            }
+        }else{
+            DoublyNode tempNode = head;
+            for(int i=0;i<location-1;i++){
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(tempNode.getNext().getNext());
+            tempNode.getNext().setPrev(tempNode);
+            size--;
+        }
     }
 
     public DoublyNode getHead() {

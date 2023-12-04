@@ -9,9 +9,15 @@ public class Main {
         cdll.insertNode(4,5);
 //        System.out.println(cdll.getHead().getValue());
 //        System.out.println(cdll.getHead().getNext().getValue());
-        cdll.traverseCDLL();
 //        cdll.reverseTraversalCDLL();
-        cdll.searchNode(3);
-        cdll.searchNode(9);
+//        cdll.searchNode(3);
+//        cdll.searchNode(9);
+        cdll.traverseCDLL();
+        cdll.deleteNode(0);
+        cdll.traverseCDLL();
+        cdll.deleteNode(6);
+        cdll.traverseCDLL();
+        cdll.deleteNode(2);
+        cdll.traverseCDLL();
     }
 }
