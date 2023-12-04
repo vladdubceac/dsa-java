@@ -51,4 +51,22 @@ public class Questions {
 //            return node;
 //        }
     }
+
+    LinkedList partition(LinkedList ll, int x) {
+        Node currentNode = ll.getHead();
+        ll.setTail(ll.getHead());
+        while(currentNode!=null){
+            Node next = currentNode.getNext();
+            if(currentNode.getValue() < x){
+                currentNode.setNext(ll.getHead());
+                ll.setHead(currentNode);
+            }else{
+                ll.getTail().setNext(currentNode);
+                ll.setTail(currentNode);
+            }
+            currentNode = next;
+        }
+        ll.getTail().setNext(null);
+        return ll;
+    }
 }

@@ -59,6 +59,14 @@ public class LinkedList {
         return size;
     }
 
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+
     public void decreaseSize() {
         size--;
     }
