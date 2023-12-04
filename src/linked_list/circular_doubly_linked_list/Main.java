@@ -10,5 +10,6 @@ public class Main {
 //        System.out.println(cdll.getHead().getValue());
 //        System.out.println(cdll.getHead().getNext().getValue());
         cdll.traverseCDLL();
+        cdll.reverseTraversalCDLL();
     }
 }
