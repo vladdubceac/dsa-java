@@ -16,5 +16,7 @@ public class Main {
         Questions questions = new Questions();
         questions.deleteDups(ll);
         ll.traversalLL();
+        Node q = questions.nthToLast(ll, 2);
+        System.out.println(q.getValue());
     }
 }
