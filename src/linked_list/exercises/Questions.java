@@ -69,4 +69,25 @@ public class Questions {
         ll.getTail().setNext(null);
         return ll;
     }
+
+    LinkedList sumLists(LinkedList llA, LinkedList llB){
+        LinkedList sum = new LinkedList();
+        Node nodeA = llA.getHead();
+        Node nodeB = llB.getHead();
+
+        int ten = 0;
+        for(int i = 0; i < llA.getSize(); i++){
+            int value = (nodeA.getValue() + nodeB.getValue());
+            value = value % 10 + ten;
+            if(sum.getSize()==0) {
+                sum.createLL(value);
+            }else{
+                sum.insertNode(value);
+            }
+            ten = (nodeA.getValue() + nodeB.getValue())/10;
+            nodeA = nodeA.getNext();
+            nodeB = nodeB.getNext();
+        }
+        return sum;
+    }
 }
