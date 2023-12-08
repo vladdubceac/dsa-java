@@ -27,9 +27,17 @@ public class LinkedList {
     }
 
     public void insertNode(int nodeValue) {
+        if (head == null) {
+            createLL(nodeValue);
+            return;
+        }
+
         Node newNode = new Node();
         newNode.setValue(nodeValue);
         newNode.setNext(null);
+        if(tail==null){
+            tail = new Node();
+        }
         tail.setNext(newNode);
         tail = newNode;
         size++;

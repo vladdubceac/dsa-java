@@ -90,4 +90,47 @@ public class Questions {
         }
         return sum;
     }
+
+    // Intersection, kth Node
+    Node getKthNode(Node head, int k){
+        Node current = head;
+        while(k>0 && current!=null){
+            current = current.getNext();
+            k--;
+        }
+        return current;
+    }
+
+    // Intersection method
+    Node findIntersection(LinkedList list1, LinkedList list2){
+        if(list1.getHead()==null || list2.getHead()==null)return null;
+        if(list1.getTail()!=list2.getTail()){
+            return null;
+        }
+        Node shorter = new Node();
+        Node longer = new Node();
+        if(list1.getSize()>list2.getSize()){
+            longer = list1.getHead();
+            shorter = list2.getHead();
+        }else{
+            longer = list2.getHead();
+            shorter = list1.getHead();
+        }
+        longer = getKthNode(longer, Math.abs(list1.getSize()-list2.getSize()));
+        while(shorter!=longer){
+            shorter = shorter.getNext();
+            longer = longer.getNext();
+        }
+        return longer;
+    }
+
+    // Add same node
+    void addSameNode(LinkedList llA, LinkedList llB, int nodeValue){
+        Node newNode = new Node();
+        newNode.setValue(nodeValue);
+        llA.getTail().setNext(newNode);
+        llA.setTail(newNode);
+        llB.getTail().setNext(newNode);
+        llB.setTail(newNode);
+    }
 }
