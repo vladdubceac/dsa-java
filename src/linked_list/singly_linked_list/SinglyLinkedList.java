@@ -118,6 +118,47 @@ public class SinglyLinkedList {
         System.out.println("The SLL deleted successfully");
     }
 
+    public void push(int nodeValue){
+        Node node = new Node();
+        node.setValue(nodeValue);
+        if(head==null){
+            head = node;
+            tail = node;
+            head.setNext(tail);
+            size=1;
+            return ;
+        }else{
+            node.setNext(null);
+            tail.setNext(node);
+            tail = node;
+            size++;
+        }
+    }
+
+    public Node pop(){
+        if(tail==null){
+            System.out.println("The SLL does not exist!");
+            return null;
+        }else if(head==tail){
+            Node returned = head;
+            head = tail = null;
+            size=0;
+            return returned;
+        }else{
+            Node currentNode = head;
+            int index = 0;
+            while(index<size-1){
+                currentNode = currentNode.getNext();
+                index++;
+            }
+            Node returned = currentNode;
+            currentNode.setNext(null);
+            tail = currentNode;
+            size--;
+            return returned;
+        }
+    }
+
     public Node getHead() {
         return head;
     }
