@@ -137,7 +137,7 @@ public class SinglyLinkedList {
 
     public Node pop(){
         if(tail==null){
-            System.out.println("The SLL does not exist!");
+            System.out.println("The SLL does not exist !");
             return null;
         }else if(head==tail){
             Node returned = head;
@@ -157,6 +157,33 @@ public class SinglyLinkedList {
             size--;
             return returned;
         }
+    }
+
+    // Insert
+    public boolean insert(int data, int index){
+        if(index<0||index>=size){
+            return false;
+        }
+        Node newNode = new Node();
+        newNode.setValue(data);
+        if(index==0){
+            newNode.setNext(head);
+            head = newNode;
+        }else if(index<size-1){
+            int position = 0;
+            Node currentNode = head;
+            while(position<index-1){
+                currentNode = currentNode.getNext();
+                position++;
+            }
+            newNode.setNext(currentNode.getNext());
+            currentNode.setNext(newNode);
+        }else{
+            tail.setNext(newNode);
+            tail = newNode;
+        }
+        size++;
+        return true;
     }
 
     public Node getHead() {
