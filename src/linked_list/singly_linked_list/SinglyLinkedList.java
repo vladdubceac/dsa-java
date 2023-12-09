@@ -186,6 +186,96 @@ public class SinglyLinkedList {
         return true;
     }
 
+    // Get
+    public Node get(int index){
+        if(head==null){
+            System.out.println("The list doesn't exist ");
+            return null;
+        }else if(index>=size){
+            return null;
+        }else {
+            int position = 0;
+            Node currentNode = head;
+            while(position<index){
+                currentNode = currentNode.getNext();
+                position++;
+            }
+            return currentNode;
+        }
+    }
+
+    public String rotate(int number) {
+        // TODO
+        if(size==0){
+            return "The list doesn't exist !";
+        }
+        int count = 0;
+        Node temp ;
+        while(count < number){
+            temp = head;
+
+            head = head.getNext();
+
+            tail.setNext(temp);
+            tail = temp;
+            tail.setNext(null);
+            count++;
+        }
+
+        return "Success";
+    }
+
+    public boolean set(int index, int value) {
+        // TODO
+        if(index<0 || index>=size){
+            return false;
+        }
+        if(size == 0){
+            push(value);
+            return true;
+        }
+
+        Node newNode = new Node();
+        newNode.setValue(value);
+        if(index == 0){
+            newNode.setNext(head);
+            head = newNode;
+            return true;
+        }
+
+        int count = 0;
+
+        Node temp = head;
+        while(count < index-1){
+            temp = temp.getNext();
+            count++;
+        }
+        newNode.setNext(temp.getNext());
+        temp.setNext(newNode);
+        return true;
+    }
+
+    public Node remove(int index) {
+        //TODO
+        Node deleted = null;
+        if(index < 0 || index >= size){
+            return null;
+        }
+        Node temp =  head;
+        if(size==1){
+            tail = null;
+            head = null;
+            size = 0;
+        }
+        for(int i=0;i<index-1;i++){
+            temp = temp.getNext();
+        }
+        deleted = temp.getNext();
+        temp.setNext(temp.getNext().getNext());
+        size--;
+        return deleted;
+    }
+
     public Node getHead() {
         return head;
     }
