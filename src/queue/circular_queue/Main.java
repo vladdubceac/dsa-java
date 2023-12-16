@@ -12,6 +12,10 @@ public class Main {
         newCQ.enQueue(10);
         newCQ.enQueue(20);
         newCQ.enQueue(30);
-        newCQ.enQueue(40);
+
+        int element = newCQ.peek();
+        System.out.println(element);
+        element = newCQ.peek();
+        System.out.println(element);
     }
 }
