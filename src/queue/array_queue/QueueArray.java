@@ -34,4 +34,33 @@ public class QueueArray {
             System.out.println("Successfully inserted " + value + " in the queue!");
         }
     }
+
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("The queue is empty ! ");
+            return Integer.MIN_VALUE;
+        } else {
+            int result = arr[beginningOfQueue];
+            beginningOfQueue++;
+            if (beginningOfQueue > topOfQueue) {
+                beginningOfQueue = topOfQueue = -1;
+            }
+            return result;
+        }
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("The queue is empty ! ");
+            return Integer.MIN_VALUE;
+        } else {
+            return arr[beginningOfQueue];
+        }
+    }
+
+    public void delete() {
+        topOfQueue = beginningOfQueue = -1;
+        arr = null;
+        System.out.println("The queue deleted successfully ! ");
+    }
 }
