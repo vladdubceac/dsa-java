@@ -18,4 +18,33 @@ public class QueueLinkedList {
         list.insertInLinkedList(value, list.size);
         System.out.println("Successfully inserted " + value + " in the queue");
     }
+
+    // deQueue
+    public int deQueue() {
+        int value = -1;
+        if (isEmpty()) {
+            System.out.println("The Queue is empty");
+        } else {
+            value = list.head.value;
+            list.deletionOfNode(0);
+        }
+        return value;
+    }
+
+    // peek
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("The queue is empty");
+            return -1;
+        } else {
+            return list.head.value;
+        }
+    }
+
+    // delete
+    public void delete() {
+        list.head = null;
+        list.tail = null;
+        System.out.println("The queue is successfully deleted ! ");
+    }
 }
