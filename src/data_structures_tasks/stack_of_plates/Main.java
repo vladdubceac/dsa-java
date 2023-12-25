@@ -1,4 +1,4 @@
-package stack.tasks.stack_of_plates;
+package data_structures_tasks.stack_of_plates;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package stack.tasks;
+package data_structures_tasks;
 
 public class ThreeInOne {
   private int numberOfStacks = 3;

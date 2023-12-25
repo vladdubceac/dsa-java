@@ -1,4 +1,4 @@
-package stack.tasks.stack_of_plates;
+package data_structures_tasks.stack_of_plates;
 
 import java.util.EmptyStackException;
 

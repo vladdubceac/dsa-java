@@ -1,4 +1,4 @@
-package stack.tasks.stack_minimum;
+package data_structures_tasks.stack_minimum;
 
 public class Node {
     private int value;

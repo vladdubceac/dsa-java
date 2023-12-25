@@ -1,4 +1,4 @@
-package stack.tasks.queue_via_stacks;
+package data_structures_tasks.queue_via_stacks;
 
 import java.util.Stack;
 
