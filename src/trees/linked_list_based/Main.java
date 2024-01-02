@@ -40,5 +40,7 @@ public class Main {
         binaryTreeLL.inOrder(binaryTreeLL.root);
         binaryTreeLL.postOrder(binaryTreeLL.root);
         binaryTreeLL.levelOrder();
+
+        binaryTreeLL.search("N5");
     }
 }
