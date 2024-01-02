@@ -39,5 +39,6 @@ public class Main {
         binaryTreeLL.preOrder(binaryTreeLL.root);
         binaryTreeLL.inOrder(binaryTreeLL.root);
         binaryTreeLL.postOrder(binaryTreeLL.root);
+        binaryTreeLL.levelOrder();
     }
 }
