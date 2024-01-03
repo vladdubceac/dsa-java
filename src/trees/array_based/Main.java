@@ -12,9 +12,17 @@ public class Main {
         newBinaryTree.insert("N7");
         newBinaryTree.insert("N8");
         newBinaryTree.insert("N9");
+//        System.out.println();
+//        newBinaryTree.preOrder(1);
+//        System.out.println();
+//        newBinaryTree.inOrder(1);
+//        System.out.println();
+//        newBinaryTree.postOrder(1);
+//        System.out.println();
+//        newBinaryTree.levelOrder();
         System.out.println();
-        newBinaryTree.preOrder(1);
-        System.out.println();
-        newBinaryTree.inOrder(1);
+
+        newBinaryTree.search("N5");
+        newBinaryTree.search("N10");
     }
 }
