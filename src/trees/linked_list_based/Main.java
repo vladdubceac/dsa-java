@@ -51,5 +51,19 @@ public class Main {
         binaryTree.insert("A5");
         binaryTree.insert("A6");
         binaryTree.levelOrder();
+
+        BinaryNode deepestNode = binaryTree.getDeepestNode();
+        System.out.println("\n"+deepestNode.value);
+
+        binaryTree.deleteDeepestNode();
+        System.out.println();
+        binaryTree.levelOrder();
+        System.out.println();
+        binaryTree.deleteNode("A3");
+        System.out.println();
+        binaryTree.levelOrder();
+
+        System.out.println();
+        binaryTree.deleteBinaryTree();
     }
 }
