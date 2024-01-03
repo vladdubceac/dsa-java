@@ -20,9 +20,12 @@ public class Main {
 //        newBinaryTree.postOrder(1);
 //        System.out.println();
 //        newBinaryTree.levelOrder();
-        System.out.println();
 
-        newBinaryTree.search("N5");
-        newBinaryTree.search("N10");
+//        newBinaryTree.search("N5");
+//        newBinaryTree.search("N10");
+        newBinaryTree.delete("N5");
+        System.out.println();
+        newBinaryTree.levelOrder();
+
     }
 }
