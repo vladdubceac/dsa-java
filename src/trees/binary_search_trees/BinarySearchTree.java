@@ -70,7 +70,7 @@ public class BinarySearchTree {
     void levelOrder(){
         Queue<BinaryNode> queue = new LinkedList<>();
         queue.add(root);
-        if(!queue.isEmpty()){
+        while (!queue.isEmpty()){
             BinaryNode presentNode = queue.remove();
             System.out.print(presentNode.getValue()+" ");
             if(presentNode.getLeft()!=null){
