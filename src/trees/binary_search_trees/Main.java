@@ -13,10 +13,12 @@ public class Main {
         newBST.insert(20);
         newBST.insert(40);
 
-        newBST.preOrder(newBST.getRoot());
-        System.out.println();
-        newBST.inOrder(newBST.getRoot());
-        System.out.println();
-        newBST.postOrder(newBST.getRoot());
+//        newBST.preOrder(newBST.getRoot());
+//        System.out.println();
+//        newBST.inOrder(newBST.getRoot());
+//        System.out.println();
+//        newBST.postOrder(newBST.getRoot());
+
+        newBST.levelOrder();
     }
 }

@@ -1,5 +1,8 @@
 package trees.binary_search_trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     private BinaryNode root;
 
@@ -61,6 +64,22 @@ public class BinarySearchTree {
         postOrder(node.getLeft());
         postOrder(node.getRight());
         System.out.print(node.getValue()+" ");
+    }
+
+    // Level order
+    void levelOrder(){
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        if(!queue.isEmpty()){
+            BinaryNode presentNode = queue.remove();
+            System.out.print(presentNode.getValue()+" ");
+            if(presentNode.getLeft()!=null){
+                queue.add(presentNode.getLeft());
+            }
+            if(presentNode.getRight()!=null){
+                queue.add(presentNode.getRight());
+            }
+        }
     }
 
     public BinaryNode getRoot() {
