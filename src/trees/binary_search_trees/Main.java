@@ -19,7 +19,13 @@ public class Main {
 //        System.out.println();
 //        newBST.postOrder(newBST.getRoot());
 
-        newBST.levelOrder();
+//        newBST.levelOrder();
+        System.out.println();
+//        newBST.search(40);
+//        newBST.search(45);
+
+        newBST.search(newBST.getRoot(), 40);
+        newBST.search(newBST.getRoot(), 45);
     }
-    
+
 }

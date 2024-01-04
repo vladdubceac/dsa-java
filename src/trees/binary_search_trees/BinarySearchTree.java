@@ -82,6 +82,38 @@ public class BinarySearchTree {
         }
     }
 
+    // search value
+    void search(int value){
+        BinaryNode node = root;
+        while(node!=null && node.getValue()!=value){
+            if(node.getValue()<value){
+                node = node.getRight();
+            }else{
+                node = node.getLeft();
+            }
+        }
+        if(node==null){
+            System.out.println("Value "+value+" NOT found in Binary Search Tree!");
+        }
+        else {
+            System.out.println("Value "+value+ " found in the Binary Search Tree!");
+        }
+    }
+
+    BinaryNode search(BinaryNode node, int value){
+        if(node==null){
+            System.out.println("Value: "+value+" not found in the Binary Search Tree");
+            return null;
+        }else if(node.getValue()==value){
+            System.out.println("Value: "+value+" found in the Binary Search Tree");
+            return node;
+        }else if(value < node.getValue()){
+            return search(node.getLeft(),value);
+        }else {
+            return search(node.getRight(),value);
+        }
+    }
+
     public BinaryNode getRoot() {
         return root;
     }
