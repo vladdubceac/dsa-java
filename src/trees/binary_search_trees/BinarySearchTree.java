@@ -43,6 +43,26 @@ public class BinarySearchTree {
         preOrder(node.getRight());
     }
 
+    // in-order traversal
+    void inOrder(BinaryNode node){
+        if(node==null){
+            return;
+        }
+        inOrder(node.getLeft());
+        System.out.print(node.getValue()+" ");
+        inOrder(node.getRight());
+    }
+
+    // post-order traversal
+    void postOrder(BinaryNode node){
+        if(node==null){
+            return;
+        }
+        postOrder(node.getLeft());
+        postOrder(node.getRight());
+        System.out.print(node.getValue()+" ");
+    }
+
     public BinaryNode getRoot() {
         return root;
     }
