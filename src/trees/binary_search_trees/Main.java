@@ -12,6 +12,7 @@ public class Main {
         newBST.insert(100);
         newBST.insert(20);
         newBST.insert(40);
+        newBST.insert(85);
 
 //        newBST.preOrder(newBST.getRoot());
 //        System.out.println();
@@ -20,12 +21,18 @@ public class Main {
 //        newBST.postOrder(newBST.getRoot());
 
 //        newBST.levelOrder();
-        System.out.println();
 //        newBST.search(40);
 //        newBST.search(45);
 
-        newBST.search(newBST.getRoot(), 40);
-        newBST.search(newBST.getRoot(), 45);
+//        newBST.search(newBST.getRoot(), 40);
+//        newBST.search(newBST.getRoot(), 45);
+//        newBST.levelOrder();
+//        System.out.println();
+//        newBST.deleteNode(newBST.getRoot(),40);
+//        newBST.deleteNode(newBST.getRoot(),80);
+//        newBST.deleteNode(newBST.getRoot(),90);
+        newBST.deleteBST();
+        newBST.levelOrder();
     }
 
 }
