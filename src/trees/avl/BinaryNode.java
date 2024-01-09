@@ -1,10 +1,10 @@
 package trees.avl;
 
 public class BinaryNode {
-    private int value;
-    private int height;
-    private BinaryNode left;
-    private BinaryNode right;
+    int value;
+    int height;
+    BinaryNode left;
+    BinaryNode right;
 
     public BinaryNode() {
         height = 0;
