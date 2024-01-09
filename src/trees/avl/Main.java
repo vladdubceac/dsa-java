@@ -11,5 +11,7 @@ public class Main {
         avl.delete(5);
         System.out.println();
         avl.levelOrder();
+        System.out.println();
+        avl.deleteAVL();
     }
 }
