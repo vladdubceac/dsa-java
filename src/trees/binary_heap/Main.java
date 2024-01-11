@@ -9,5 +9,7 @@ public class Main {
         binaryHeap.insert(15,heapType);
         binaryHeap.insert(1,heapType);
         binaryHeap.levelOrder();
+        binaryHeap.extractHeadOfBP(heapType);
+        binaryHeap.levelOrder();
     }
 }
