@@ -22,7 +22,7 @@ public class BinaryHeap {
         return arr[1];
     }
 
-    public int sizeOfBP() {
+    public int sizeOfBH() {
         return sizeOfTree;
     }
 
@@ -114,7 +114,7 @@ public class BinaryHeap {
         heapifyTopToBottom(swapChild, heapType);
     }
 
-    public int extractHeadOfBP(HeapType heapType) {
+    public int extractHeadOfBH(HeapType heapType) {
         if (isEmpty()) {
             return Integer.MIN_VALUE;
         } else {
@@ -124,5 +124,12 @@ public class BinaryHeap {
             heapifyTopToBottom(1, heapType);
             return extractedValue;
         }
+    }
+
+    // delete
+    public void deleteBH(){
+        arr = null;
+        sizeOfTree = 0;
+        System.out.println("Binary Heap has been successfully deleted ");
     }
 }
