@@ -42,4 +42,42 @@ public class Trie {
         }
         return currentNode.endOfString;
     }
+
+    // Delete a String from Trie
+    private boolean delete(TrieNode parentNode, String word, int index){
+        char ch = word.charAt(index);
+        TrieNode currentNode = parentNode.children.get(ch);
+        boolean canThisNodeBeDeleted;
+
+        if(currentNode.children.size()>1){
+            delete(currentNode, word, index + 1);
+            return false;
+        }
+        if(index==word.length()-1){
+            if(currentNode.children.size()>=1){
+                currentNode.endOfString = false;
+                return false;
+            }else{
+                parentNode.children.remove(ch);
+                return true;
+            }
+        }
+        if(parentNode.endOfString==true){
+            delete(currentNode, word, index+1);
+            return false;
+        }
+        canThisNodeBeDeleted = delete(currentNode,word,index+1);
+        if(canThisNodeBeDeleted){
+            parentNode.children.remove(ch);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public void delete(String word){
+        if(search(word)){
+            delete(root,word,0);
+        }
+    }
 }

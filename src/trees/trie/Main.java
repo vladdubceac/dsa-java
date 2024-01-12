@@ -10,5 +10,8 @@ public class Main {
         newTrie.search("APIS");
         newTrie.search("AP");
         newTrie.search("APS");
+
+        newTrie.delete("API");
+        newTrie.search("API");
     }
 }
