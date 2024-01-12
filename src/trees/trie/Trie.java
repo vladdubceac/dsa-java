@@ -22,4 +22,24 @@ public class Trie {
         current.endOfString = true;
         System.out.println("Successfully inserted " + word + " in Trie");
     }
+
+    // Search for a String in Trie
+    public boolean search(String word){
+        TrieNode currentNode = root;
+        for(int i=0;i<word.length();i++){
+            char ch = word.charAt(i);
+            TrieNode node = currentNode.children.get(ch);
+            if(node==null){
+                System.out.println("Word: "+word+" does not exist in Trie");
+                return false;
+            }
+            currentNode = node;
+        }
+        if(currentNode.endOfString){
+            System.out.println("Word: "+word+" exists in Trie");
+        }else{
+            System.out.println("Word: "+word+" does not exists in Trie, but it is a prefix of another string");
+        }
+        return currentNode.endOfString;
+    }
 }

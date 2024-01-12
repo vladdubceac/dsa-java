@@ -5,5 +5,10 @@ public class Main {
         Trie newTrie = new Trie();
         newTrie.insert("API");
         newTrie.insert("APIS");
+
+        newTrie.search("API");
+        newTrie.search("APIS");
+        newTrie.search("AP");
+        newTrie.search("APS");
     }
 }
