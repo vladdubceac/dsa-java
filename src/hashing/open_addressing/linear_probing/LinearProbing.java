@@ -52,7 +52,7 @@ public class LinearProbing {
                 int newIndex = i % hashTable.length;
                 if (hashTable[newIndex] == null) {
                     hashTable[newIndex] = word;
-                    System.out.println("The " + word + " successfully inserted at location: " + newIndex);
+                    System.out.println("The word \"" + word + "\" successfully inserted at location: " + newIndex);
                     break;
                 } else {
                     System.out.println(newIndex + " is already occupied. Trying next empty cell");
