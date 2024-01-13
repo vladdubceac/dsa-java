@@ -8,6 +8,11 @@ public class Main {
         directChaining.insertHashTable("brown");
         directChaining.insertHashTable("fox");
         directChaining.insertHashTable("over");
+//        directChaining.displayHashTable();
+//        directChaining.searchHashTable("fox");
+//        directChaining.searchHashTable("ox");
+        directChaining.deleteKeyHashTable("The");
+        directChaining.deleteKeyHashTable("he");
         directChaining.displayHashTable();
     }
 }
