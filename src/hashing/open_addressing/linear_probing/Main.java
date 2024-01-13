@@ -8,6 +8,13 @@ public class Main {
         linearProbing.insertInHashTable("brown");
         linearProbing.insertInHashTable("fox");
         linearProbing.insertInHashTable("over");
+
+        linearProbing.searchHashTable("fox");
+        linearProbing.searchHashTable("fox1");
+
+        linearProbing.deleteKeyHashTable("fox");
+        linearProbing.deleteKeyHashTable("fox2");
+
         linearProbing.displayHashTable();
     }
 }

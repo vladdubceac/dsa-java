@@ -62,15 +62,41 @@ public class LinearProbing {
         usedCellNumber++;
     }
 
-    public void displayHashTable(){
-        if(hashTable==null){
+    public void displayHashTable() {
+        if (hashTable == null) {
             System.out.println("\nHashTable does not exist");
             return;
-        }else{
+        } else {
             System.out.println("\n----------HashTable--------");
             for (int i = 0; i < hashTable.length; i++) {
-                System.out.println("Index "+i+", key: "+hashTable[i]);
+                System.out.println("Index " + i + ", key: " + hashTable[i]);
             }
         }
+    }
+
+    public boolean searchHashTable(String word) {
+        int index = modASCIIHashFunction(word, hashTable.length);
+        for (int i = index; i < index + hashTable.length; i++) {
+            int newIndex = i % hashTable.length;
+            if (hashTable[newIndex] != null && hashTable[newIndex].equals(word)) {
+                System.out.println("\"" + word + "\" found at location : " + newIndex);
+                return true;
+            }
+        }
+        System.out.println("\"" + word + "\" not found in HashTable");
+        return false;
+    }
+
+    public void deleteKeyHashTable(String word) {
+        int index = modASCIIHashFunction(word, hashTable.length);
+        for (int i = index; i < index + hashTable.length; i++) {
+            int newIndex = i % hashTable.length;
+            if (hashTable[newIndex] != null && hashTable[newIndex].equals(word)) {
+                hashTable[newIndex] = null;
+                System.out.println("\"" + word + "\" has been deleted from HashTable");
+                return;
+            }
+        }
+        System.out.println("\"" + word + "\" not found in HashTable");
     }
 }
