@@ -85,7 +85,7 @@ public class QuadraticProbing {
         for (int i = index; i < index + hashTable.length; i++) {
             int newIndex = (index + (counter * counter)) % hashTable.length;
             if (hashTable[newIndex] != null && hashTable[newIndex].equals(word)) {
-                System.out.println("The word \"" + word + "\" found on position " + i);
+                System.out.println("The word \"" + word + "\" found at location " + i);
                 return true;
             }
             counter++;
