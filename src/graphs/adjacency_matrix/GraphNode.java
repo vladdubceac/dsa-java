@@ -1,4 +1,4 @@
-package graphs;
+package graphs.adjacency_matrix;
 
 public class GraphNode {
     private String name;

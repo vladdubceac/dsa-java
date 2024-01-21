@@ -1,0 +1,41 @@
+package graphs.neighbour_list;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Graph {
+    List<GraphNode> nodeList = new ArrayList<>();
+
+    public Graph(List<GraphNode> nodeList) {
+        this.nodeList = nodeList;
+    }
+
+    public void addUndirectedEdge(int i, int j) {
+        GraphNode first = nodeList.get(i);
+        GraphNode second = nodeList.get(j);
+        first.getNeighbours().add(second);
+        second.getNeighbours().add(first);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("   ");
+        for (int i = 0; i < nodeList.size(); i++) {
+            s.append(nodeList.get(i).getName() + " ");
+        }
+        s.append("\n");
+        for (int i = 0; i < nodeList.size(); i++) {
+            s.append(nodeList.get(i).getName() + ": ");
+            for (int j = 0; j < nodeList.get(i).getNeighbours().size(); j++) {
+                if(j==nodeList.get(i).getNeighbours().size()-1){
+                    s.append(nodeList.get(i).getNeighbours().get(j).getName());
+                }else{
+                    s.append(nodeList.get(i).getNeighbours().get(j).getName()+" -> ");
+                }
+            }
+            s.append("\n");
+        }
+        return s.toString();
+    }
+}

@@ -1,4 +1,4 @@
-package graphs;
+package graphs.adjacency_matrix;
 
 import java.util.ArrayList;
 import java.util.List;
