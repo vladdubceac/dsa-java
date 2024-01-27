@@ -20,5 +20,7 @@ public class Main {
         g.addUnidirectedEdge(2,3);
         g.addUnidirectedEdge(3,4);
         System.out.println(g);
+
+        g.bfs();
     }
 }

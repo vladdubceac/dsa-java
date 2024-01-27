@@ -3,6 +3,7 @@ package graphs.adjacency_matrix;
 public class GraphNode {
     private String name;
     private int index;
+    private boolean isVisited = false;
 
     public GraphNode(String name, int index) {
         this.name = name;
@@ -23,5 +24,13 @@ public class GraphNode {
 
     public void setIndex(int index) {
         this.index = index;
+    }
+
+    public boolean isVisited() {
+        return isVisited;
+    }
+
+    public void setVisited(boolean visited) {
+        isVisited = visited;
     }
 }
