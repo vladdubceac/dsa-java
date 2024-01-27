@@ -6,6 +6,7 @@ import java.util.List;
 public class GraphNode {
     private String name;
     private int index;
+    private boolean isVisited = false;
 
     private List<GraphNode> neighbours = new ArrayList<>();
 
@@ -36,5 +37,13 @@ public class GraphNode {
 
     public void setNeighbours(List<GraphNode> neighbours) {
         this.neighbours = neighbours;
+    }
+
+    public boolean isVisited() {
+        return isVisited;
+    }
+
+    public void setVisited(boolean visited) {
+        isVisited = visited;
     }
 }

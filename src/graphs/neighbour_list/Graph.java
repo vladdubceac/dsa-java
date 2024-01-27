@@ -1,6 +1,7 @@
 package graphs.neighbour_list;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Graph {
@@ -28,14 +29,39 @@ public class Graph {
         for (int i = 0; i < nodeList.size(); i++) {
             s.append(nodeList.get(i).getName() + ": ");
             for (int j = 0; j < nodeList.get(i).getNeighbours().size(); j++) {
-                if(j==nodeList.get(i).getNeighbours().size()-1){
+                if (j == nodeList.get(i).getNeighbours().size() - 1) {
                     s.append(nodeList.get(i).getNeighbours().get(j).getName());
-                }else{
-                    s.append(nodeList.get(i).getNeighbours().get(j).getName()+" -> ");
+                } else {
+                    s.append(nodeList.get(i).getNeighbours().get(j).getName() + " -> ");
                 }
             }
             s.append("\n");
         }
         return s.toString();
+    }
+
+    // BFS internal
+    void bfsVisit(GraphNode node) {
+        LinkedList<GraphNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            GraphNode currentNode = queue.remove(0);
+            currentNode.setVisited(true);
+            System.out.print(currentNode.getName() + " ");
+            for (GraphNode neighbor : currentNode.getNeighbours()) {
+                if (!neighbor.isVisited()) {
+                    queue.add(neighbor);
+                    neighbor.setVisited(true);
+                }
+            }
+        }
+    }
+
+    void bfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited()) {
+                bfsVisit(node);
+            }
+        }
     }
 }

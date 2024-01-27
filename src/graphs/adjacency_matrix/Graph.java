@@ -55,7 +55,7 @@ public class Graph {
         while (!queue.isEmpty()){
             GraphNode currentNode = queue.remove(0);
             currentNode.setVisited(true);
-            System.out.println(currentNode.getName()+" ");
+            System.out.print(currentNode.getName()+" ");
             ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
             for(GraphNode neighbor : neighbors){
                 if(!neighbor.isVisited()){
