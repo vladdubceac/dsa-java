@@ -22,5 +22,8 @@ public class Main {
         System.out.println(g);
 
         g.bfs();
+        System.out.println("\n---------");
+        g.nodeList.forEach(n->n.setVisited(false));
+        g.dfs();
     }
 }

@@ -3,6 +3,7 @@ package graphs.neighbour_list;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class Graph {
     List<GraphNode> nodeList = new ArrayList<>();
@@ -61,6 +62,30 @@ public class Graph {
         for (GraphNode node : nodeList) {
             if (!node.isVisited()) {
                 bfsVisit(node);
+            }
+        }
+    }
+
+    void dfsVisit(GraphNode node){
+        Stack<GraphNode> stack = new Stack<>();
+        stack.push(node);
+        while (!stack.isEmpty()){
+            GraphNode currentNode = stack.pop();
+            currentNode.setVisited(true);
+            System.out.print(currentNode.getName()+" ");
+            for(GraphNode neighbor : currentNode.getNeighbours()){
+                if(!neighbor.isVisited()){
+                    stack.push(neighbor);
+                    neighbor.setVisited(true);
+                }
+            }
+        }
+    }
+
+    void dfs(){
+        for(GraphNode node : nodeList){
+            if(!node.isVisited()){
+                dfsVisit(node);
             }
         }
     }
