@@ -1,9 +1,12 @@
 package graphs.adjacency_matrix;
 
+import java.util.ArrayList;
+
 public class GraphNode {
     private String name;
     private int index;
     private boolean isVisited = false;
+    private ArrayList<GraphNode> neighbors = new ArrayList<GraphNode>();
 
     public GraphNode(String name, int index) {
         this.name = name;
@@ -32,5 +35,13 @@ public class GraphNode {
 
     public void setVisited(boolean visited) {
         isVisited = visited;
+    }
+
+    public ArrayList<GraphNode> getNeighbors() {
+        return neighbors;
+    }
+
+    public void setNeighbors(ArrayList<GraphNode> neighbors) {
+        this.neighbors = neighbors;
     }
 }

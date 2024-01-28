@@ -37,7 +37,7 @@ public class Graph {
         return s.toString();
     }
 
-    // get Neighbours
+    // get Neighbors
     public ArrayList<GraphNode> getNeighbors(GraphNode node) {
         ArrayList<GraphNode> neighbors = new ArrayList<GraphNode>();
         int nodeIndex = node.getIndex();
@@ -47,19 +47,20 @@ public class Graph {
             }
         }
         return neighbors;
+
     }
 
     // BFS internal
-    void bfsVisit(GraphNode node){
+    void bfsVisit(GraphNode node) {
         LinkedList<GraphNode> queue = new LinkedList<GraphNode>();
         queue.add(node);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             GraphNode currentNode = queue.remove(0);
             currentNode.setVisited(true);
-            System.out.print(currentNode.getName()+" ");
+            System.out.print(currentNode.getName() + " ");
             ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
-            for(GraphNode neighbor : neighbors){
-                if(!neighbor.isVisited()){
+            for (GraphNode neighbor : neighbors) {
+                if (!neighbor.isVisited()) {
                     queue.add(neighbor);
                     neighbor.setVisited(true);
                 }
@@ -67,24 +68,24 @@ public class Graph {
         }
     }
 
-    public void bfs(){
-        for(GraphNode node: nodeList){
-            if(!node.isVisited()){
+    public void bfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited()) {
                 bfsVisit(node);
             }
         }
     }
 
-    void dfsVisit(GraphNode node){
+    void dfsVisit(GraphNode node) {
         Stack<GraphNode> stack = new Stack<>();
         stack.push(node);
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             GraphNode currentNode = stack.pop();
             currentNode.setVisited(true);
-            System.out.print(currentNode.getName()+" ");
+            System.out.print(currentNode.getName() + " ");
             ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
-            for(GraphNode neighbor : neighbors){
-                if(!neighbor.isVisited()){
+            for (GraphNode neighbor : neighbors) {
+                if (!neighbor.isVisited()) {
                     stack.push(neighbor);
                     neighbor.setVisited(true);
                 }
@@ -92,11 +93,40 @@ public class Graph {
         }
     }
 
-    void dfs(){
-        for(GraphNode node : nodeList){
-            if(!node.isVisited()){
+    void dfs() {
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited()) {
                 dfsVisit(node);
             }
+        }
+    }
+
+    //  Topological Sort
+    public void addDirectedEdge(int i, int j) {
+        adjacencyMatrix[i][j] = 1;
+    }
+
+    void topologicalVisit(GraphNode node, Stack<GraphNode> stack) {
+        ArrayList<GraphNode> neighbors = getNeighbors(node);
+        for (GraphNode neighbor : neighbors) {
+            if (!neighbor.isVisited()) {
+                topologicalVisit(neighbor, stack);
+            }
+        }
+        node.setVisited(true);
+        stack.push(node);
+    }
+
+    void topologicalSort() {
+        Stack<GraphNode> stack = new Stack<>();
+        for (GraphNode node : nodeList) {
+            if (!node.isVisited()) {
+                topologicalVisit(node, stack);
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop().getName() + " ");
         }
     }
 }
