@@ -60,6 +60,38 @@ public class Graph {
             }
         }
     }
+
+    void dfsVisit(GraphNode node) {
+        Stack<GraphNode> stack = new Stack<>();
+        stack.push(node);
+        while (!stack.isEmpty()) {
+            GraphNode currentNode = stack.pop();
+            currentNode.setVisited(true);
+            System.out.print(currentNode.getName() + " ");
+            for (GraphNode neighbor : currentNode.getNeighbors()) {
+                if (!neighbor.isVisited()) {
+                    stack.push(neighbor);
+                    neighbor.setVisited(true);
+                }
+            }
+        }
+    }
+
+    void dfs() {
+        for (GraphNode node : nodeList) {
+            if(!node.isVisited()) {
+                dfsVisit(node);
+            }
+        }
+    }
+
+    // Topological Sort
+    public void addDirectedEdge(int i, int j) {
+        GraphNode first = nodeList.get(i);
+        GraphNode second = nodeList.get(j);
+        first.getNeighbors().add(second);
+    }
+
     public static void pathPrint(GraphNode node) {
         if (node.getParent()  != null) {
             pathPrint(node.getParent());
