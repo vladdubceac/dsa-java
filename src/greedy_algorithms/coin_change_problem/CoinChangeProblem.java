@@ -9,9 +9,10 @@ public class CoinChangeProblem {
         while (true) {
             int coinValue = coins[index];
             index--;
-            int maxAmount = (n / coinValue) * coinValue;
+            int numberOfCoins = (n / coinValue);
+            int maxAmount = numberOfCoins * coinValue;
             if (maxAmount > 0) {
-                System.out.println("Coin value : " + coinValue + " taken count : " + (n / coinValue));
+                System.out.println("Coin value : " + coinValue + " taken count : " + numberOfCoins);
                 n = n - maxAmount;
             }
             if(n==0){
