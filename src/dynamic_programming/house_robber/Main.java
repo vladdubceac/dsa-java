@@ -7,5 +7,10 @@ public class Main {
         System.out.println("House robber , top down solution = " + n);
         n = houseRobber.maxMoneyTopDown2(new int[]{6, 7, 1, 30, 8, 2, 4});
         System.out.println("House robber , top down solution = " + n);
+        n = houseRobber.maxMoneyBottomUp(new int[]{6, 7, 1, 30, 8, 2, 4});
+        System.out.println("House robber , bottom up solution = " + n);
+        n = houseRobber.maxMoneyBottomUp2(new int[]{6, 7, 1, 30, 8, 2, 4});
+        System.out.println("House robber , bottom up solution = " + n);
+
     }
 }
