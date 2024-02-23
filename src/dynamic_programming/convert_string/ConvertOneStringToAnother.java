@@ -55,4 +55,27 @@ public class ConvertOneStringToAnother {
         }//end of if-else
         return dp[i1][i2];
     }//end of method
+
+    public int findMinOperationsBottomUp(String s1, String s2) {
+        int[][] matrix = new int[s1.length() + 1][s2.length() + 1];
+        for (int i1 = 0; i1 <= s1.length(); i1++) {
+            matrix[i1][0] = i1;
+        }
+
+        for (int i2 = 0; i2 <= s2.length(); i2++) {
+            matrix[0][i2] = i2;
+        }
+
+        for (int i1 = 1; i1 <= s1.length(); i1++) {
+            for (int i2 = 1; i2 <= s2.length(); i2++) {
+                if (s1.charAt(i1 - 1) == s2.charAt(i2 - 1)) {
+                    matrix[i1][i2] = matrix[i1 - 1][i2 - 1];
+                } else {
+                    matrix[i1][i2] = 1 + Math.min(matrix[i1 - 1][i2], Math.min(matrix[i1][i2 - 1], matrix[i1 - 1][i2 - 1]));
+                }
+            }
+        }
+        return matrix[s1.length()][s2.length()];
+    }
+
 }
